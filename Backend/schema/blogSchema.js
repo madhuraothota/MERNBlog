@@ -16,7 +16,7 @@ const blogSchema = new mongoose.Schema ({
    
 },
 
-{versionKey: false, timestamps:true}
+{versionKey: false, timestamps: { createdAt :true, updatedAt: true}}
 
 );
 
