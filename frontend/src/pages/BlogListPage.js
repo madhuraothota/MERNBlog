@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import {
+  Box,
   Button,
   Card,
   CardActions,
@@ -22,7 +23,6 @@ const BlogListPage = () => {
   const fetchAllBlogs = async () => {
     const response = await axios.get("/api/blog/");
     const allBlogs = response.data;
-
            
     setAllBlogs(allBlogs);
   };
@@ -39,7 +39,6 @@ const BlogListPage = () => {
     fetchAllBlogs();
   }, []);
 
-  console.log(allBlogs);
   return (
     <Grid container spacing={3}>
       <Grid item xs={12} display="flex" justifyContent="space-between">
@@ -51,9 +50,14 @@ const BlogListPage = () => {
         >Create new blog</Button>
       </Grid>
      
-    
-      
-        {allBlogs.map((blog, index) => (
+      {(!allBlogs || allBlogs.length === 0) && (
+        <Box  style={{display:"flex",height:"300px", width:"100%" ,justifyContent:"center",alignItems:"center"}}>
+        <Typography variant="h5" textAlign="center">No Blogs available</Typography>
+        </Box>
+      )}
+
+      {!(!allBlogs || allBlogs.length === 0) &&       
+        allBlogs.map((blog, index) => (
         <Grid item key={index} lg={4} md={6} xs={12}>
           <Card variant="outlined">
             <CardHeader
