@@ -1,0 +1,22 @@
+{
+  "name": "mern-blog",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build" : "cd backend && npm install && cd../frontend && npm install && npm run build",
+    "start": "node backend/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/madhuraothota/MERNBlog.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/madhuraothota/MERNBlog/issues"
+  },
+  "homepage": "https://github.com/madhuraothota/MERNBlog#readme"
+}
